@@ -1933,7 +1933,7 @@ InfoReceiver.prototype = new EventEmitter(['finish']);
 InfoReceiver.prototype.doXhr = function(base_url, AjaxObject) {
     var that = this;
     var t0 = (new Date()).getTime();
-    var xo = new AjaxObject('GET', base_url + '/info');
+    var xo = new AjaxObject('GET', base_url + '/info?cb=' + utils.random_string(10));
 
     var tref = utils.delay(8000,
                            function(){xo.ontimeout();});
